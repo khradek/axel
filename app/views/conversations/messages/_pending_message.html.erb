@@ -1,0 +1,17 @@
+<div class="clearfix <%= pending_message.id %>">
+  <div class="alert <%= pending_message.from ? 'alert-info message-pending' : 'alert-success message-pending' %>">
+    <%= pending_message.body %>
+    <div class="text-right">
+      <% if pending_message.send_at.nil? %>
+        <small>Will send momentarily</small>
+      <% else %>  
+        <small>Will send <%= pending_message.send_at.strftime("%b %e at %l:%M %p") %></small>
+      <% end %>
+    </div>
+    <% if pending_message.recurring? %>
+      <small class="dark-text italic">This message is part of a recurring series.</small>  
+    <% else %>
+      <%= link_to 'Delete', conversation_message_path(@conversation, pending_message), method: :delete, data: { confirm: 'Are you sure? This message will be deleted and will not be sent.' } %>
+    <% end %>
+  </div>
+</div>

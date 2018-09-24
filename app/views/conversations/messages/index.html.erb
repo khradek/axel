@@ -1,0 +1,79 @@
+
+<div id="conversation" data-id="<%= @conversation.id %>">
+  <div class="text-center h2-custom">Conversation with <%= @conversation.receiver.name %></div>
+
+  <div class="message-box" id="message-window">
+    <br>
+    <div id="messages">
+      <%= render @messages %>
+    </div>
+
+    <!-- Render form to send new message -->
+    <%= form_for (@message), url: conversation_messages_path(@conversation) do |f| %>
+    
+      <div class="new-message-box">
+        <div class="row">
+
+          <div class="col-8">
+            <div class="form-group">
+              <%= f.text_area :body, class: 'form-control', placeholder: 'Type message here' %>
+            </div>
+          </div>
+
+
+        </div>
+
+        <%= f.submit 'Send Message', class: 'btn btn-primary btn-block' %>
+
+      </div>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div>
+    <span class="h3-custom">Recurring Messages</span>
+    <%= link_to 'Add a Recurring Message', new_conversation_recurring_message_path(@conversation), class: 'btn btn-default pull-right' %>
+  </div>
+
+  <div class="media">
+    <div class="media-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Message</th>
+            <th>Frequency</th>
+            <th>Time</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @recurring_messages.each do |rm| %>
+            <tr>
+              <td><%= truncate(rm.body, length: 60) %></td>
+              <td><%= rm.frequency %></td>
+              <td><%= rm.start_date.strftime("%l:%M %p") %></td>
+              <td><%= link_to "View Details", conversation_recurring_message_path(@conversation, rm)  %></td>
+              <td><%= link_to 'Delete', conversation_recurring_message_path(@conversation, rm), method: :delete, data: { confirm: 'Are you sure? This message will be deleted and will no longer be sent moving forward.' } %></td>
+            </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="h3-custom">Scheduled Messages</div>
+  <br>
+  <div id="pending-messages">
+    <%= render partial: "pending_message", collection: @pending_messages %>
+  </div>
+
+</div>
+
+<br>
+<br>

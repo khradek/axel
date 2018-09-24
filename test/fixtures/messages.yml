@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  to: MyString
+  from: MyString
+  status: MyString
+  body: MyString
+  message_sid: MyString
+  account_sid: MyString
+  messaging_service_sid: MyString
+  direction: MyString
+  send_at: 2018-09-21 12:57:42
+  sent_at: 2018-09-21 12:57:42
+  frequency: MyString
+  recurring: false
+  user: one
+  conversation: one
+  recurring_message: one
+
+two:
+  to: MyString
+  from: MyString
+  status: MyString
+  body: MyString
+  message_sid: MyString
+  account_sid: MyString
+  messaging_service_sid: MyString
+  direction: MyString
+  send_at: 2018-09-21 12:57:42
+  sent_at: 2018-09-21 12:57:42
+  frequency: MyString
+  recurring: false
+  user: two
+  conversation: two
+  recurring_message: two

@@ -1,0 +1,13 @@
+<div class="message clearfix <%= message.id %>" data-time="<%= message.created_at %>">
+  <div class="alert <%= message.from ? 'alert-info message-inbound' : 'alert-success message-outbound' %>">
+    <%= message.body %>
+     <div class="text-right">
+       <% if message.status == "sent" %><small>Sent</small><% end %>
+       <% if message.sent_at %>
+        <small><%= message.sent_at.strftime("%b %e at %l:%M %p") %></small>
+       <% elsif  message.status == "received" %><small>Received</small> 
+        <small><%= message.created_at.strftime("%b %e at %l:%M %p") %></small>
+       <% end %> 
+     </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+.message-outbound {
+  width: 45%;
+  float: right;
+  margin-right: 20px;
+}
+
+.message-inbound {
+  width: 45%;
+  float: left;
+  margin-left: 20px;
+}
+
+.message-pending {
+  width: 60%;
+  float: left;
+  margin-left: 5px;
+}
+
+.h2-custom {
+  font-size: 2.3em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  line-height: 1.0;
+}
+
+.h3-custom {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.dark-text{
+  color: #403e3e;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.custom-margin{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.message-box{
+  border-style: ridge;
+  border-width: 3px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  background-color: #fff;
+  border-color: #b6b6b6;
+  max-height: 625px;
+  min-height: 625px;
+  margin-bottom: 10px;
+  margin-top: 10px;   
+  overflow-y : scroll;  
+}
+
+.new-message-box{
+  border-top: 2px ridge;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  border-color: #b6b6b6;
+  margin-top: 5px;
+  margin-bottom: 5px; 
+}
